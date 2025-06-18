@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div class="container">
+    <h1>Find Movies...<span>MOVIE SEARCH</span></h1>
+    <div class="search-field">
+        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" id="search" placeholder="Search for a movie...">
+    </div>
+    
+    <section>
+        <div id="show-search"></div>
+    </section>
+  
+    <section id="trending-container">
+       <h2>Trending Now</h2>
+       <ul id="movie-list-trending"> <!-- Movie items--></ul>
+    </section>
+      
+     <section id="popular-container">
+       <h2>What's Popular</h2>
+       <ul id="movie-list-popular"> <!-- Movie items--></ul>
+    </section>
+      
+     <section id="upcoming-container">
+       <h2>Upcoming</h2>
+       <ul id="movie-list-upcoming"> <!-- Movie items--></ul>
+    </section>
+  
+     <section id="toprated-container">
+       <h2>Top Rated</h2>
+       <ul id="movie-list-top-rated"> <!-- Movie items--></ul>
+    </section>
+
+    <div id="movie-modal" class="modal">
+     <div class="modal-box">
+          <!--image left-->
+          <!--details right-->    
+     </div>
+    </div>
+
+    <footer>
+        <h2>Movie Search</h2>
+        <p>Enjoy!</p>     
+    </footer>
+</div>
+    
+</body>
+</html>

@@ -32,14 +32,15 @@ The project is part of my learning web development.
 ```bash
 git clone https://github.com/m-lilyy/Movie-Search.git
 cd Movie-Search
-
+ ```
 2. Go to [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) and get an API key if you don't have
 3. Create a config.js file and add as following:
-   
-  const config = {
-  apiKey: "YOUR_API_KEY"
-};
 
+  ```js
+    const config = {
+      apiKey: "YOUR_API_KEY"
+    };
+   ```
 ## Tech Stack
 
 * HTML5

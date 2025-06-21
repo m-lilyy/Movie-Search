@@ -33,8 +33,8 @@ The project is part of my learning web development.
 git clone https://github.com/m-lilyy/Movie-Search.git
 cd Movie-Search
 
-3. Go to [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) and get an API key if don't have
-4. Create a config.js file and add as following:
+2. Go to [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) and get an API key if you don't have
+3. Create a config.js file and add as following:
    
   const config = {
   apiKey: "YOUR_API_KEY"

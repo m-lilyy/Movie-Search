@@ -6,7 +6,7 @@ const popular = document.getElementById("movie-list-popular");
 const upcoming = document.getElementById("movie-list-upcoming");
 const topRated = document.getElementById("movie-list-top-rated");
 
-const apiKey = "4022b374d60d83025c8b164634470c29";
+const apiKey = config.apiKey;
 
 async function showSearchMovies(query) {
 
@@ -141,14 +141,38 @@ function formatCard(movies,container){
     });
 };
 
+
+// display movie trailer
+async function getVideo(movie_id){
+    
+    try {                     
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}/videos?language=en-US&api_key=${apiKey}`);
+      const data = await res.json();
+      console.log(data);
+                              //find trailer or teaser that match video type on youtube
+      const trailer  = data.results.find(video=> ["Trailer","Teaser"].includes(video.type) && video.site === "YouTube"); 
+      if(trailer){
+        const url = `https://youtu.be/${trailer.key}` ;  //check main link from youtube
+
+        window.open(url,"_blank"); //argument to open link in another page
+        
+      }else{
+        console.log("No trailer found on YouTube");
+      }
+    } catch (error) {
+      console.error("Failed to fetch video", error);
+    }
+};
+
 let currentMovie = null;
 const modal = document.querySelector(".modal");
 
+   // close modal that being clicked
     modal.addEventListener("click",(e) => {
    if(e.target === e.currentTarget){
       modal.classList.remove("show");
       currentMovie = null;
-   }
+   }   
 });
 
 //click to show movie modal
@@ -167,12 +191,16 @@ async function showModal(movie){
             <h3>${movie.title}</h3>
             <p>Release Date: ${movie.release_date} <span class="lang">(${movie.original_language})</span></p>
             <p class="overview">Overview</p>
-            <p class="content">${movie.overview || "-"}</p>
+            <p class="content">${movie.overview || "-"}</p>    
             <p class="score"><i class="fa-solid fa-star"></i> ${(movie.vote_average).toFixed(1)}</p>
+            <button class="trailer-btn"><i class="fa-solid fa-play"></i>Trailer</button>         
          </div>
     `
-    modal.classList.add("show");
-    currentMovie = movie.id;
+      modal.classList.add("show");
+      currentMovie = movie.id;
+
+       // click trailer btn to watch by calling function getVideo();
+      modalContent.querySelector(".trailer-btn").addEventListener("click",()=>getVideo(movie.id));
 
        //click content to close
       modalContent.addEventListener("click",()=>{

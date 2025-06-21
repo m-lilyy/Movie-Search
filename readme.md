@@ -45,6 +45,9 @@ The project is part of my learning web development.
 * Font Awesome
 * TMDB API
 
+## Live
+[View this project](https://github.com/m-lilyy/Movie-Search)
+
 ## Screenshots
 
 ![Preview](img/preview.png)

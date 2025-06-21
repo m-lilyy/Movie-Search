@@ -25,13 +25,17 @@ The project is part of my learning web development.
 * Handling error by failed fetches and invalid data responses
 * Dom Manipulation
 
-## How to use
+## How to Use
 
-1. Clone repository
-2. Go to [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) and get an API key if don't have
-3. Create config.js file and add as following
-  
-  // 
+1. Clone this repository
+   
+```bash
+git clone https://github.com/m-lilyy/Movie-Search.git
+cd Movie-Search
+
+3. Go to [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) and get an API key if don't have
+4. Create a config.js file and add as following:
+   
   const config = {
   apiKey: "YOUR_API_KEY"
 };
@@ -45,8 +49,6 @@ The project is part of my learning web development.
 * Font Awesome
 * TMDB API
 
-## Live
-[View this project](https://github.com/m-lilyy/Movie-Search)
 
 ## Screenshots
 
